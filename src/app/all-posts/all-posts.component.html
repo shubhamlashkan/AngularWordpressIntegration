@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let post of allPosts">
+      <div class="container cardStyle">
+        <div class="card">
+          <img src="{{'https://guideformaths.azurewebsites.net/'+post.jetpack_featured_media_url}}" class="card-img-top" alt="..." style="width: 300px; height:300px;">
+          <div class="card-body">
+            <h4>{{post.title.rendered}}</h4>
+
+            <p [innerHtml]="post.excerpt.rendered | slice:0:350">
+            </p>
+            <a  class="btn btn-outline-success" [routerLink]="['/post',post.id]">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
